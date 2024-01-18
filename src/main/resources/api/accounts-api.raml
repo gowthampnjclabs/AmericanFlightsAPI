@@ -1,0 +1,65 @@
+#%RAML 1.0
+title: Accounts API
+description: customer accounts api
+uses:
+  Accounts: Accounts API/Library/Library.raml
+/customeraccounts:
+  get:
+    headers:
+      uuid:
+        type: string
+        required: true
+    responses:
+      200:
+       body:
+         application/json:
+           example: !include Accounts API/examples/Accounts-get-response.json
+  post:
+    description: This method is use to accepts an array of Account objects.
+    headers:
+      uuid:
+        type: string
+        description: identify the person making account requests
+        required: true
+    body:
+       application/json:
+         type: Accounts.account 
+         example: !include Accounts API/examples/Accounts-post-request.json
+           
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {message: Accounts created }
+                                                           
+        
+  /{ID}:
+   uriParameters:
+     ID:
+      type: integer
+   get:
+    description: retrieves all account data
+    headers:
+      uuid:
+        type: string
+        required: true
+    queryParameters:
+      type:     
+        required: true
+        enum:
+          - personal
+          - business
+      name:
+        required: false
+    responses:
+      200:
+        description: success
+        body:
+          application/json:
+            example: !include Accounts API/examples/Accounts-get-response.json
+
+        
+         
+        
+    
