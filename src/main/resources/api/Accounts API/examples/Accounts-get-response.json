@@ -1,0 +1,19 @@
+ [ {
+    "ID": 4567,
+  "name": "gowtham",
+  "address": "namakkal",
+  "country": "india",
+  "airmiles": 1234,
+  "creationDate": "2024-01-18T02:14:40.099Z",
+  "type": "personal"
+  },
+  {
+    "ID": 4567,
+  "name": "gowtham",
+  "address": "namakkal",
+  "country": "india",
+  "airmiles": 1234,
+  "creationDate": "2024-01-18T02:14:40.099Z",
+  "type": "personal"
+  }]
+  
